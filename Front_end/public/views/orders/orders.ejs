@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <div style="width: 100% ; border: 1px solid #ccc;height: 100px;">
+        <h1>BADMINTON SHOP</h1>
+      </div>
+
+    <nav>
+        <ul>
+            <li><a href="/products" >Products</a></li>
+            <li><a href="/users">Users</a></li>
+            <li><a href="/orders" class="active">Orders</a></li>
+            <li><a href="/categories">Categories</a></li>
+        </ul>
+    </nav>
+    <table>
+        <tr>
+          <th>Order ID</th>
+          <th>Product ID</th>
+          <th>User ID</th>
+          <th>Action</th>
+        </tr>
+        
+        <tr>
+            <td><%= orders.orders_id %></td>
+            <td><%= orders.products_id %></td>
+            <td><%= orders.user_id %></td>
+            <td>
+                <a href="http://localhost:5500/orders/delete/<%= orders.orders_id %>">Delete</a>
+            </td>
+        </tr>
+    </table>
+    <a href="http://localhost:5500/orders">Back</a>
+</body>
+</html>

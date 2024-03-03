@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href= "../../css/style.css">
+
+
+
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="/products" class="active">Products</a></li>
+            <li><a href="/users">Users</a></li>
+            <li><a href="/orders">Orders</a></li>
+            <li><a href="/categories">Categories</a></li>
+        </ul>
+    </nav>
+    <h1>CREATE Product</h1>
+    <form method="post" action="/product_create">
+        <label for="product_name">Product Name:</label>
+        <input type="text" id="product_name" name="product_name" >
+
+        <label for="product_code">Product Code:</label>
+        <input type="text" id="product_code" name="product_code" >
+
+        <label for="category_id">Category id:</label>
+        <select id="category_id" name="category_id" class="custom-dropdown">
+            <% for(var j=0; j < categories.length; j++) { 
+                %>
+                <option value="<%= categories[j].category_id %>"><%= categories[j].category_name %>
+                </option>
+                <% } %>
+        </select>
+        
+        <label for="unit">unit :</label>
+        <input type="text" id="unit" name="unit" >
+
+        <label for="price">price :</label>
+        <input type="text" id="price" name="price" >
+
+
+        <input type="submit" value="create">
+        <a href="http://localhost:5500/products">Back</a>
+    </form>
+    
+</body>
+</html>
