@@ -6,7 +6,7 @@ const { env } = require('process');
 const app = express();
 
 //const base_url = "http://localhost:3000"
-const base_url = "http://node59722-jsbatshop.proen.app.ruk-com.cloud/products"
+const base_url = "http://node59722-jsbatshop.proen.app.ruk-com.cloud"
 
 app.set("views" , path.join(__dirname , "/public/views"))
 app.set("view engine" , "ejs")
@@ -191,7 +191,7 @@ app.get("/product/delete/:id" , async (req,res) => {
 /////////////////////User////////////////////////////////
 app.get("/users" , async (req,res) => {
     try {
-        const response = await axios.get("http://node59722-jsbatshop.proen.app.ruk-com.cloud/products")
+        const response = await axios.get("http://node59722-jsbatshop.proen.app.ruk-com.cloud/users")
     res.render("User/usersAll" , { users : response.data })
     } catch(err) {
         res.status(500).send(err)
@@ -268,9 +268,9 @@ app.get("/users/delete/:id" , async (req,res) => {
 
 app.get("/orders", async (req, res) => {
     try {
-        const response = await axios.get("http://node59722-jsbatshop.proen.app.ruk-com.cloud/products");
+        const response = await axios.get("http://node59722-jsbatshop.proen.app.ruk-com.cloud/orders");
         const resProducts = await axios.get("http://node59722-jsbatshop.proen.app.ruk-com.cloud/products")
-        const response2 = await axios.get("http://node59722-jsbatshop.proen.app.ruk-com.cloud/products");
+        const response2 = await axios.get("http://node59722-jsbatshop.proen.app.ruk-com.cloud/users");
         
         res.render("orders/ordersAll", { 
             orders: response.data, 
@@ -353,7 +353,7 @@ app.get("/orders/delete/:id", async (req, res) => {
 
 app.get("/categories", async (req, res) => {
     try {
-        const response = await axios.get("http://node59722-jsbatshop.proen.app.ruk-com.cloud/products");
+        const response = await axios.get("http://node59722-jsbatshop.proen.app.ruk-com.cloud/categories");
         res.render("categories/categoriesAll", { categories: response.data });
     } catch(err) {
         res.status(500).send(err);
