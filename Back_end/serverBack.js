@@ -1,5 +1,5 @@
 require('dotenv').config();
-
+//const Sequelize = require('sequelize');
 const Sequelize = require('sequelize');
 const express = require('express');
 //const sqlite3 = require('sqlite3');
