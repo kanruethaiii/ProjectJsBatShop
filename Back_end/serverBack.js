@@ -2,13 +2,14 @@ require('dotenv').config();
 
 const Sequelize = require('sequelize');
 const express = require('express');
-// const sqlite3 = require('sqlite3');
+const sqlite3 = require('sqlite3');
 const app = express();
 
 // connect to database
 //const db = new sqlite3.Database('./Database/shopBatmintan.sqlite');
 
 app.use(express.json());
+app.use(sqlite3());
 
 const sequelize = new Sequelize('database', 'username', 'password', {
     host: 'localhost',
