@@ -9,7 +9,7 @@ const app = express();
 //const db = new sqlite3.Database('./Database/shopBatmintan.sqlite');
 
 app.use(express.json());
-//app.use(sqlite3());
+app.use(sqlite3());
 
 const sequelize = new Sequelize('database', 'username', 'password', {
     host: 'localhost',
